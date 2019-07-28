@@ -12,7 +12,7 @@ const styles = ({
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    border: '16px transparent solid',
+    border: '16gpx transparent solid',
   },
 });
 

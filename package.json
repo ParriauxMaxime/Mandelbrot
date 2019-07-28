@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p 14444"
   },
   "dependencies": {
     "@material-ui/core": "^4.3.0",

@@ -1,7 +1,7 @@
 import React from 'react';
-import Control from './Control';
-import Mandelbrot from './Mandelbrot';
-import { ControlProvider } from './ControlContext';
+import Control from '../../components/Control';
+import Mandelbrot from '../../components/Mandelbrot';
+import { ControlProvider } from '../../components/ControlContext';
 
 function Container({ children }) {
   return (
