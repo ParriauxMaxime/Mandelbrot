@@ -54,7 +54,6 @@ class Mandelbrot extends React.PureComponent {
     const {
       division, factor, showPoint, width,
     } = this.props;
-    console.info(width);
     let RAYON = 100;
     if (width === 'xs') { RAYON = 150; }
     if (width === 'sm') { RAYON = 200; }
@@ -74,7 +73,7 @@ class Mandelbrot extends React.PureComponent {
           <circle cx={RAYON} cy={RAYON} r={RAYON} stroke="black" strokeWidth="1" fill="white" />
           { showPoint
           && positions.map((e, i) => (
-            <line key={`Je m'en basl${makeSufficientRandom(i)}`} x1={e.x - OFFSET} strokeWidth="3" y1={e.y - OFFSET} x2={e.x + OFFSET} y2={e.y + OFFSET} stroke="black" />
+            <line key={`line-number-${makeSufficientRandom(i)}`} x1={e.x - OFFSET} strokeWidth="3" y1={e.y - OFFSET} x2={e.x + OFFSET} y2={e.y + OFFSET} stroke="black" />
           ))
         }
           {/* {
@@ -84,7 +83,7 @@ class Mandelbrot extends React.PureComponent {
         } */}
           {
           lines.map((e, i) => (
-            <line key={`Je m'en bas la race${makeSufficientRandom(i)}`} x1={e.x1} strokeWidth="1" y1={e.y1} x2={e.x2} y2={e.y2} stroke="black" />
+            <line key={`stroke-number-${makeSufficientRandom(i)}`} x1={e.x1} strokeWidth="1" y1={e.y1} x2={e.x2} y2={e.y2} stroke="black" />
           ))
         }
         </svg>
