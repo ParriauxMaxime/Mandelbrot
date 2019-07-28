@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Grid, makeStyles } from '@material-ui/core';
+import { Grid, withStyles } from '@material-ui/core';
 import { ControlConsumer, withControl } from './ControlContext';
 import { SliderDivision, SliderFactor, SliderSpeed } from './Slider';
 import AutoPlay from './AutoPlay';
 
-const styles = ({
+const styles = theme => ({
   root: {
-    width: '75%',
+    width: '90%',
+    [theme.breakpoints.up('sm')]: {
+      width: '75%',
+    },
     height: 'auto',
     display: 'flex',
     flexDirection: 'column',
@@ -14,6 +17,7 @@ const styles = ({
     justifyContent: 'center',
   },
   section: {
+    padding: 4,
     display: 'flex',
     width: '100%',
     justifyContent: 'space-around',
@@ -22,17 +26,17 @@ const styles = ({
 });
 
 function Control({
-  division, factor, setDivision, setFactor,
+  division, factor, setDivision, setFactor, classes,
 }) {
   const [div, setDiv] = useState(division);
   const [fac, setFac] = useState(factor);
   return (
-    <div style={styles.root}>
-      <div style={styles.section}>
+    <div className={classes.root}>
+      <div className={classes.section}>
         <SliderDivision name="division" />
         <SliderFactor name="factor" />
       </div>
-      <div style={styles.section}>
+      <div className={classes.section}>
         <AutoPlay />
         <SliderSpeed name="speed" />
       </div>
@@ -40,4 +44,4 @@ function Control({
   );
 }
 
-export default withControl(Control);
+export default withControl(withStyles(styles)(Control));

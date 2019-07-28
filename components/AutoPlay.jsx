@@ -28,7 +28,7 @@ class AutoPlay extends React.PureComponent {
         this.interval = setInterval(() => {
           const div = this.props.division;
           this.props.setDivision(div + 1);
-        }, speed * 10);
+        }, 1010 - speed * 10);
       }
     }
   }
@@ -40,7 +40,7 @@ class AutoPlay extends React.PureComponent {
         this.interval = setInterval(() => {
           const div = this.props.division;
           setDivision(div + 1);
-        }, speed * 10);
+        }, 1010 - speed * 10);
       } else {
         clearInterval(this.interval);
         this.interval = null;
@@ -54,7 +54,7 @@ class AutoPlay extends React.PureComponent {
     } = this.props;
     const { play } = this.state;
     return (
-      <div>
+      <div style={{ marginRight: 16 }}>
         <Button
           color={play ? 'primary' : 'default'}
           variant="contained"

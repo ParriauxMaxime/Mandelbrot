@@ -5,14 +5,13 @@ import { withControl } from './ControlContext';
 
 const styles = ({
   root: {
-    width: '100%',
-    margin: 16,
+    width: '90%',
+    border: '8px solid transparent',
   },
   container: {
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    border: '16gpx transparent solid',
   },
 });
 

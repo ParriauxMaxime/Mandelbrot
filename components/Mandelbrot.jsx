@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { withWidth } from '@material-ui/core';
 import { withControl } from './ControlContext';
 
 
-const RAYON = 200;
-
-function Container({ children }) {
+function Container({ children, RAYON }) {
   return (
     <div style={{
       width: RAYON * 2 + 8,
@@ -52,11 +51,21 @@ const OFFSET = 1;
 class Mandelbrot extends React.PureComponent {
   render() {
     const makeSufficientRandom = i => Math.round(Math.random() * 1000000) * i - (((-1 * Math.round(Math.random())) * Math.PI) * (i / 2));
-    const { division, factor, showPoint } = this.props;
+    const {
+      division, factor, showPoint, width,
+    } = this.props;
+    console.info(width);
+    let RAYON = 100;
+    if (width === 'xs') { RAYON = 150; }
+    if (width === 'sm') { RAYON = 200; }
+    if (width === 'md') { RAYON = 250; }
+    if (width === 'lg') { RAYON = 300; }
+    if (width === 'xl') { RAYON = 400; }
     const positions = getPosition(RAYON, division);
     const lines = getLines(positions, factor);
+
     return (
-      <Container>
+      <Container RAYON={RAYON}>
         <svg style={{
           height: '100%',
           width: '100%',
@@ -84,4 +93,4 @@ class Mandelbrot extends React.PureComponent {
   }
 }
 
-export default withControl(Mandelbrot);
+export default withControl(withWidth()(Mandelbrot));
