@@ -1,8 +1,8 @@
 import React from 'react';
 import { CssBaseline, Typography } from '@material-ui/core';
-import Control from '../../components/Control';
-import Mandelbrot from '../../components/Mandelbrot';
-import { ControlProvider } from '../../components/ControlContext';
+import Control from '../components/Control';
+import Mandelbrot from '../components/Mandelbrot';
+import { ControlProvider } from '../components/ControlContext';
 
 function Container({ children }) {
   return (
@@ -26,7 +26,7 @@ function App() {
       <ControlProvider>
         <div style={{ textAlign: 'center', margin: '16px 4px' }}>
           <Typography variant="h3" component="h1">
-          Ensemble de Mandelbrot
+            Ensemble de Mandelbrot
           </Typography>
           <a style={{ fontSize: '1.5rem' }} href="https://fr.wikipedia.org/wiki/Ensemble_de_Mandelbrot">Wiki</a>
         </div>
