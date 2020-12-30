@@ -12,19 +12,19 @@ yarn #or npm i
 ## Usage
 
 ```bash
-yarn dev
+yarn start
 #go to localhost:3000
 ```
 
 OR
 
 ```bash
-yarn build && yarn start
-#go to localhost:14444
+yarn build && yarn serve
+#go to localhost:5000
 ```
 
 ## Demo
-[parria-m.tech](http://parria-m.tech)
+[Let's hope this still works](https://clever-booth-3ce0b2.netlify.app/)
 
 
 ## License

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { Grid, withStyles } from '@material-ui/core';
-import { ControlConsumer, withControl } from './ControlContext';
+import React from 'react';
+import { withStyles } from '@material-ui/core';
+import { withControl } from './ControlContext';
 import { SliderDivision, SliderFactor, SliderSpeed } from './Slider';
 import AutoPlay from './AutoPlay';
 
@@ -21,15 +21,11 @@ const styles = theme => ({
     display: 'flex',
     width: '100%',
     justifyContent: 'space-around',
-    alignItems: 'baseline',
+    alignItems: 'center',
   },
 });
 
-function Control({
-  division, factor, setDivision, setFactor, classes,
-}) {
-  const [div, setDiv] = useState(division);
-  const [fac, setFac] = useState(factor);
+function Control({ classes }) {
   return (
     <div className={classes.root}>
       <div className={classes.section}>

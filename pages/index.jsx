@@ -26,9 +26,9 @@ function App() {
       <ControlProvider>
         <div style={{ textAlign: 'center', margin: '16px 4px' }}>
           <Typography variant="h3" component="h1">
-            Ensemble de Mandelbrot
+            Mandelbrot
+            <a style={{ position: 'absolute', top: '4rem', fontSize: '0.5rem' }} href="https://fr.wikipedia.org/wiki/Ensemble_de_Mandelbrot">Wiki</a>
           </Typography>
-          <a style={{ fontSize: '1.5rem' }} href="https://fr.wikipedia.org/wiki/Ensemble_de_Mandelbrot">Wiki</a>
         </div>
         <br />
         <Control />

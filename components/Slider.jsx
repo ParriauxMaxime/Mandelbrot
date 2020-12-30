@@ -1,6 +1,6 @@
 // @flow
-import React, { Fragment } from 'react';
-import { makeStyles, Slider as SliderMui, Typography } from '@material-ui/core';
+import React from 'react';
+import { Slider as SliderMui, Typography } from '@material-ui/core';
 import { withControl } from './ControlContext';
 
 const styles = ({
@@ -13,17 +13,28 @@ const styles = ({
     flexDirection: 'column',
     width: '100%',
   },
+  text: {
+    position: 'relative',
+    top: '0.5rem',
+  },
 });
 
 const MIN = 2;
 const MAX = 2000;
 
-const Slider = props => (
+const Slider = ({ name, value, ...props }) => (
   <div style={styles.container}>
-    <Typography>
-      {`${props.name}: ${props.value}`}
+    <Typography style={styles.text}>
+      {`${name}: ${value}`}
     </Typography>
-    <SliderMui style={styles.root} {...props} />
+    <SliderMui
+      {...{
+        ...props,
+        value,
+        name,
+        style: styles.root,
+      }}
+    />
   </div>
 );
 
